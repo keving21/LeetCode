@@ -29,8 +29,7 @@ class Solution {
             match = check(temp.left, sum, value, match);
             match = check(temp.right, sum, value, match);
             if(temp.left == null && temp.right == null && sum == value) {
-                match = true;
-                return match;
+                return true;
             }
         }
         return match;
