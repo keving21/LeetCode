@@ -17,11 +17,9 @@ class Solution {
                 if(grid[i][j] == 1) {
                     numPpl ++;
                 }
-
                 else if(grid[i][j] == 2) {
                     queue.add(new int[] {i,j});
                 }
-
             }
         }
         if(numPpl==0)return 0;
@@ -39,7 +37,6 @@ class Solution {
 
                 int [] temp = queue.poll();
                 //check left
-
                 if(temp[0]-1>=0 && grid[temp[0]-1][temp[1]]==1){
                     grid[temp[0]-1][temp[1]] = 2;
                     queue.add(new int[] {temp[0]-1, temp[1]});
@@ -50,34 +47,21 @@ class Solution {
                     grid[temp[0]+1][temp[1]] = 2;
                     queue.add(new int[] {temp[0]+1, temp[1]});
                     numPpl--;
-
                 }
-
                 //check down
                 if(temp[1]-1>=0 && grid[temp[0]][temp[1]-1]==1){
                     grid[temp[0]][temp[1]-1] = 2;
                     queue.add(new int[] {temp[0], temp[1]-1});
                     numPpl--;
-
                 }
-
                 //check up
                 if(temp[1]+1<grid[0].length && grid[temp[0]][temp[1]+1]==1){
                     grid[temp[0]][temp[1]+1] = 2;
                     queue.add(new int[] {temp[0], temp[1]+1});
                     numPpl--;
-
                 }
-
             }
-
-
-
-
         }
-
-
-
         return -1;
     }
 }
